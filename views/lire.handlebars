@@ -1,0 +1,31 @@
+
+
+<div class="row" style="margin-bottom:30px;">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-md-pull-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+        <h2 class="text-left">{{article.titre}}</h2>
+        <br>
+        <p>{{article.nomAuteur}}  {{article.prenomAuteur}}  -  {{dateFormat date "d/M/YYYY, h:mm:ss a"}}</p>
+        <p>{{article.categorie}} </p>
+    </div>
+
+ 
+        <hr style=" width:82%; height:3px; background-color:#bf3e11;">
+    
+    
+</div>
+<div class="row" style="margin-bottom:80px;">
+    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+        <p>  {{{article.contenu}}} </p>
+     </div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-12 col-xs-offset-3"><img src="/img/profil/{{article.photoAuteur}}" width="150"></div>
+    <div class="col-md-7 col-sm-7 col-sm-push-1 col-xs-12">
+        <h4>{{article.nomAuteur}}  {{article.prenomAuteur}}</h4>
+        <blockquote>
+            <p>{{article.bioAuteur}}</p>
+            <footer> </footer>
+        </blockquote>
+    </div>
+</div>
+

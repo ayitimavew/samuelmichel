@@ -1,0 +1,59 @@
+
+<div class="content container">
+   
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading"><img src="/img/profil/{{user.photo}}" width=300px heigth=300px></div>
+                <div class="panel-body">
+                    <div>
+                        <a href="/modifier-profil" style="margin-bottom:5px; margin-right:5px;"  class="btn btn-default" type="button">Modifye pwofil ou</a>
+                                               
+                        <hr>
+                        <h3>{{user.nom}} {{user.prenom}}</h3>
+                        <p>{{user.email}}</p>
+                        <hr>
+                        <blockquote>
+                            <p>{{user.bio}}</p>
+                            <footer> </footer>
+                        </blockquote>
+                        <hr>
+                        <br>
+                        <br>
+                     {{#if isAdmin}}
+                           <h4>Opsyons atik</h4>
+                        <hr>
+                        <a href="/articles/1" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Atik mwen yo</a>
+                        <a href="/editeur" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Ekri yon atik</a>
+                         <a href="/add/categorie" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Kategori</a>
+                        <br>
+                        <br>
+
+                        <h4>Opsyon anons</h4>
+                        <hr>
+                        <a href="/annonce" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Mete yon anons</a>
+                        <a href="/mes-annonces/1" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Anons mwen yo</a>
+                         <br>
+                        <br>
+
+                         <h4>Opsyon donasyon </h4>
+                        <hr>
+                        <a href="/show/donnations/1" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Afiche don yo</a>
+                         <br>
+                        <br>
+
+                     {{/if}}
+                        <h4>Opsyon Kou</h4>
+                        <hr>
+                        <a href="#" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Lis kou yo</a>
+                        <a href="#" style="margin-bottom:5px; margin-right:5px;" class="btn btn-default" type="button">Kou mwen yo</a>
+                         <br>
+                        <br>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

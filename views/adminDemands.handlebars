@@ -1,0 +1,5 @@
+<h1>Demande admin</h1> <br> <br>
+
+ {{#each demandes}}
+                <p>{{this.nom}}  {{this.prenom}}    |   <a href="/accept-admin/{{this.id_user}}/{{this.id}}">Accepter</a>    <a href="/delete-demand/{{this.id}}">Suprimer</a></p>
+ {{/each}}

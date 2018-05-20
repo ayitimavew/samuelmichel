@@ -1,0 +1,63 @@
+
+
+    <div class="container">
+
+
+        <div class="row ">
+            <div class="row" >
+                <h1 class="text-center text-center text-danger">Mes articles publiés </h1>
+            </div>
+        </div>
+    </div>
+    <br><br><hr>
+  {{#if message}}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-center text-danger">Aucun articles publiés </h1>
+            <br>
+           <a href="/editeur"> <h4 class="text-center text-center text-danger">Ecrire un article</h4></a>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="container">
+   {{#each articles}}
+    <div class="row product"  style="margin-bottom:50px;">
+    <div class="col-md-5 col-md-offset-0"><img style="width:400px; height:300px;" class="img-responsive" src="{{this.image}}"></div>
+        <div class="col-md-7">
+            <h2>{{this.titre}} </h2>
+            <p>{{this.nomAuteur}}  {{this.prenomAuteur}} - {{this.categorie}} - {{dateFormat date "d/M/YYYY, h:mm:ss a"}}</p>
+            <p>{{{trimString this.contenu}}}</p>          
+            <a href="/lire/{{this._id}}" class="btn btn-primary" type="button">Lire </a>
+            <a href="/modifier/article/{{this._id}}" class="btn btn-primary" >Modifier </a>
+            <a href="/delete/article/{{this._id}}" class="btn btn-danger pull-right" >Supprimer </a>
+        </div>
+        <hr>
+    </div>
+    {{/each}}
+
+    <br><br>
+    {{#if showPagination}}
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="/articles/{{previous}}" aria-label="Précédent">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+       {{#each pages}}
+        <li><a href="/articles/{{this}}">{{this}}</a></li>
+        {{/each}}
+    
+        <li>
+          <a href="/articles/{{next}}" aria-label="Suivant">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    {{/if}}
+</div>
+
+

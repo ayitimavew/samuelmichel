@@ -1,0 +1,53 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center">Emisyons </h1>
+        <hr>
+    </div>
+</div>
+
+ {{#if message}}
+  <br>
+  <br>
+  <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-center text-danger">Poko gen emisyon pou kounya. </h1>
+       </div>
+    </div>
+    {{/if}}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            {{#each emissions}}
+                <iframe width="100%" height="120" src={{this.link}} frameborder="0" ></iframe>
+            {{/each}}
+            
+        </div>
+    </div>
+
+<br><br>
+  
+  <div class="container">
+      {{#if showPagination}}
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="/emissions/{{previous}}" aria-label="Précédent">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+       {{#each pages}}
+        <li><a href="/emissions/{{this}}">{{this}}</a></li>
+        {{/each}}
+    
+        <li>
+          <a href="/emissions/{{next}}" aria-label="Suivant">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    {{/if}}
+  </div>

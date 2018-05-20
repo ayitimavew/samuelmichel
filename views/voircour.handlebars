@@ -1,0 +1,56 @@
+
+ 
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <h2 class="text-center">Ajouter une video</h2><br>
+            <form method="POST" action="/add-video/{{id}}">
+                <div class="form-group">
+                 <div class="form-group">
+                    <label class="control-label">Titre video</label>
+                    <input name="titre" class="form-control" type="text"></div>
+
+                <div class="form-group">
+                    <label class="control-label">Lien du cours</label>
+                    <textarea name="lien" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-default pull-right" type="submit">Button</button>
+            </form>
+        </div>
+
+        <br><br><br>
+
+  <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td><h3>Categories</h3></td>
+                        <td><h3>Option</h3></td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each videos}}
+                        <tr><td>{{this.titre}}</td> <td><a class="btn-sm btn-danger" href="/delete-video/{{this._id}}">Supprimer</a></td> </tr>
+                    {{/each}}
+
+               
+            
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<div class="row" >
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                <div class="card">
+                    <div class="card-image"><img class="img-responsive" src="{{image}}"><span class="card-title"><h2>{{titre}}</h2></span></div>
+                    <div style="word-wrap:break-word" class="card-content">
+                        <h4>{{description}}</h4>
+                    </div>
+                </div>
+            </div>
+            
+            
+    </div>
+    
+    

@@ -1,0 +1,4 @@
+<h1>Les Admin</h1> <br> <br>
+ {{#each admins}}
+                <p>{{this.nom}}  {{this.prenom}}    |      <a href="/delete-admin/{{this._id}}">Suprimer</a></p>
+ {{/each}}

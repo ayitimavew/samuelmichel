@@ -1,0 +1,107 @@
+<html>
+    <head>
+                 
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+     <script src="assets/js/jquery.min.js"></script>
+     <script src="assets/js/bootstrap.min.js"></script>
+
+{{#if tinymce}}
+    
+{{/if}}  
+        
+    {{!-- <link rel="stylesheet" href="/css/profil.css">  --}}
+
+    
+    <style>
+            #upload-input {
+                display: none;
+                }
+    
+                 #g-upload-input{
+                display: none;
+                }
+    </style>
+
+    </head>
+
+    <body>
+            
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><a class="navbar-brand navbar-link" href="/"><img width="80px" src="/img/logoo.png" alt=""></a></div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li class="" role="presentation"><a href="/radio">Radyo </a></li>
+                        <li role="presentation"><a href="/cours">Kou </a></li>
+                        <li role="presentation"><a href="/emissions/1">Emisyon </a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Blòg </a>
+                            <ul class="dropdown-menu" role="menu">
+                                {{#each cat}}
+                                     <li role="presentation"><a href="/categorie/{{this.titre}}">{{this.titre}}</a></li>
+                                 {{/each}}
+
+                            </ul>
+                        </li>
+                       
+                        <li role="presentation"><a href="/commercial/1">Ti anons </a></li>
+                        <li role="presentation"><a href="/donnation">donasyon </a></li>
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav pull-right">
+                        {{#if user}}
+                            <li role="presentation"><a href="/deconnexion">Dekoneksyon </a></li>
+                            <li role="presentation"><a href="/profil">Pwofil </a></li>
+                        {{else}}
+                        <li role="presentation"><a href="/connexion">Konneksyon </a></li>
+                        <li  role="presentation"><a href="/inscription">Inskripsyon </a></li>
+                        {{/if}}
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>  
+        
+    
+           {{{body}}}
+    
+         
+        <div style="" style="width:100%;">
+            <footer style="width:100%; height:200px; padding:30px; background-color:#292c2f;margin-top:150px;">
+                <div class="row" style="background-color:#292c2f;">
+                        <div class="col-md-4 col-sm-6 footer-navigation">
+                            <h3 style="color:#bf3e11;"><a href="#"><img width="200px" src="/img/logoo.png" alt=""></a></h3>
+                           
+                           
+                        </div>
+                        <div class="col-md-4 col-sm-6 footer-contacts">
+                            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                                <p style="color:#bf3e11;"><span class="new-line-span">21 Revolution Street</span> Paris, France</p>
+                            </div>
+                            <div><span class="fa fa-phone footer-contacts-icon"></span>
+                                <p style="color:#bf3e11;" class="footer-center-info email text-left"> +1 555 123456</p>
+                            </div>
+                            <div><span class="fa fa-envelope footer-contacts-icon"></span>
+                                <p style="color:#bf3e11;"> <a href="#" target="_blank">ayitimavew@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-4 footer-about">
+                        
+                            <p style="color:#bf3e11;"> “AYITI M’ AVÈ W’” se konesans lakay ou, se vant ou, se rasin ou. “AYITI M’ AVÈ W’” se oumenm, se nou tout ansanm.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </footer>    
+
+        </div>  
+        
+    </body>
+</html>
