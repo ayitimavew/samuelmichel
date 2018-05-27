@@ -279,7 +279,7 @@ lireVideo : (req,res) => {
     q.showCategorie((r)=>{
         Videos.findById(req.params.id, (err, video)=>{
             console.log(video)
-            res.render('lirevideo', {
+            res.render('playVideo', {
                 cat:r,
                 video:video
             })
