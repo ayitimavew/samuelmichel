@@ -278,8 +278,7 @@ detailCours : (req,res) => {
 lireVideo : (req,res) => {
     q.showCategorie((r)=>{
         Videos.findById(req.params.id, (err, video)=>{
-
-            console.log(video);
+            console.log(video)
             res.render('lirevideo', {
                 cat:r,
                 video:video
