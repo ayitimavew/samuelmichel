@@ -125,6 +125,7 @@ app.post('/gallerie/1', (req,res) => {
     // rename it to it's orignal name
     form.on('file', function(field, file) {
       fs.rename(file.path, path.join(form.uploadDir, file.name));
+      console.log(file.name);
       Gallerie({
           nom : file.name
       }).save((err)=>{
