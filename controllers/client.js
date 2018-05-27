@@ -263,7 +263,7 @@ detailCours : (req,res) => {
          
         Videos.find({idVideo:req.params.id}, null, {sort:'-date'},(err,videos)=>{
             
-            if(req.user){
+            if(!req.user){
                 res.render('needToSubscribe', {
                     cat:r,
                    cours : cours,
