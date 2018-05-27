@@ -42,10 +42,37 @@ module.exports = {
       
     },
 
+    tiAnons : (req,res) => {
+        q.showCategorie((rr)=>{
+            Annonce.paginate({}, { page:req.params.page, limit: 5, sort: { date: -1 } }, function(err,result) {
+                if(result.docs.length==0){
+                 let message = " Poko gen atik pou kunia.";
+                 res.render("tiAnons",{message:message, user: req.user});
+                }else{
+                 let pages = [];
+                 for(i=1; i<=result.pages; i++)
+                     pages.push(i)
+                 pages.sort()
+                 
+                 res.render('tiAnon',{
+                     annonces : result.docs,
+                     user: req.user,
+                     cat:rr,
+                     showPagination : pages.length >= 1,
+                     pages : pages,
+                     next :  req.params.page < result.pages ? parseInt(result.page)+1 : 1,
+                     previous : result.page > 1 ? parseInt(result.page)-1 : 1,
+                 })
+                }
+             });
+           })
+      
+    },
+
     showArticles :  (req,res) => {
         q.showCategorie((rr)=>{
             q.showArticleWithCat(req.params.titre, (a)=>{
-                Articles.paginate({categorie:req.params.titre}, { page:req.params.page, limit: 1, sort: { date: -1 } }, function(err,result) {
+                Articles.paginate({categorie:req.params.titre}, { page:req.params.page, limit: 5, sort: { date: -1 } }, function(err,result) {
                     if(result.docs.length==0){
                      let message = " Poko gen atik pou kounya.";
                      res.render("articles",{message:message, user: req.user, categorie : req.params.titre, cat:rr});
@@ -190,29 +217,29 @@ module.exports = {
 
     commercial : (req,res) => {
 
-       q.showCategorie((rr)=>{
-        Annonce.paginate({}, { page:req.params.page, limit: 1, sort: { date: -1 } }, function(err,result) {
-            if(result.docs.length==0){
-             let message = " Aucun article  publié .";
-             res.render("sesArticles",{message:message, user: req.user});
-            }else{
-             let pages = [];
-             for(i=1; i<=result.pages; i++)
-                 pages.push(i)
-             pages.sort()
-             
-             res.render('commercial',{
-                 annonces : result.docs,
-                 user: req.user,
-                 cat:rr,
-                 showPagination : pages.length >= 1,
-                 pages : pages,
-                 next :  req.params.page < result.pages ? parseInt(result.page)+1 : 1,
-                 previous : result.page > 1 ? parseInt(result.page)-1 : 1,
-             })
-            }
-         });
-       })
+        q.showCategorie((rr)=>{
+            Annonce.paginate({}, { page:req.params.page, limit: 5, sort: { date: -1 } }, function(err,result) {
+                if(result.docs.length==0){
+                 let message = " Poko gen atik pou kunia.";
+                 res.render("sesArticles",{message:message, user: req.user});
+                }else{
+                 let pages = [];
+                 for(i=1; i<=result.pages; i++)
+                     pages.push(i)
+                 pages.sort()
+                 
+                 res.render('commercial',{
+                     annonces : result.docs,
+                     user: req.user,
+                     cat:rr,
+                     showPagination : pages.length >= 1,
+                     pages : pages,
+                     next :  req.params.page < result.pages ? parseInt(result.page)+1 : 1,
+                     previous : result.page > 1 ? parseInt(result.page)-1 : 1,
+                 })
+                }
+             });
+           })
     }, 
 
     cours : (req,res) => {
@@ -303,7 +330,7 @@ lireVideo : (req,res) => {
     },
 
     emissions : (req,res) => {
-        Emission.paginate({}, { page:req.params.page, limit: 1, sort: { date: -1 } }, function(err,result) {
+        Emission.paginate({}, { page:req.params.page, limit: 5, sort: { date: -1 } }, function(err,result) {
            
             if(result.docs.length==0){
                 let message = " Aucun article  publié .";
@@ -315,6 +342,7 @@ lireVideo : (req,res) => {
                 pages.sort()
     
                q.showCategorie((r)=>{
+                   console.log(result.docs)
                 res.render('emissions',{
                     title : "add Emission",
                     user: req.user,

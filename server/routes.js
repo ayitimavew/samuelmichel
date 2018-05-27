@@ -43,6 +43,7 @@ router.get('/radio', client.radio);
 router.get('/categorie/:titre', client.showArticles);
 
 //Commercial
+router.get('/ti-anons/:page', client.tiAnons);
 router.get('/commercial/:page', client.commercial);
 router.get('/annonces', allowed, admin.annonce);
 router.post('/annonces', allowed, admin._annonce);
