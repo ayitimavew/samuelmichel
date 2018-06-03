@@ -21,8 +21,14 @@
         <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
             {{#each emissions}}
                 <div style="margin-bottom:100px;">
-                  <iframe width="100%" height="120" src={{{this.link}}} frameborder="0" ></iframe>
+                 <div>
+                   <h3>{{this.titre}}</h3>
+                   <br>
+                    <iframe width="100%" height="120" src={{{this.link}}} frameborder="0" ></iframe>
+                 </div>
                 </div>
+
+                <hr>
                 
             {{/each}}
             

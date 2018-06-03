@@ -10,6 +10,19 @@ let passport = require('passport'),
 
 module.exports = {
 
+    //API
+
+    apiGetEmissions : (req,res)=>{
+        Emission.find({},null,{sort:'-date'}, (err,r)=>{
+            if(err)
+                console.log(err);      
+            res.json(r)
+        })
+    },
+
+    //END API
+
+
     //Gallerie
     gallerie : (req,res) => {
 
@@ -283,9 +296,10 @@ _modifierArticle : (req,res)=>{
 
     _addEmission : (req,res)=>{
         
+        let titre = req.body.titre;
         let link = req.body.link;
-        if(link!=""){
-            q.addEmission({link},(txt)=>{
+        if(link!="" && titre!=""){
+            q.addEmission({titre,link},(txt)=>{
                 res.redirect('/add/emission/1');
             });
 

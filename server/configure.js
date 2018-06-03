@@ -13,7 +13,7 @@ MongoStore = require('connect-mongo')(session),
 flash = require('connect-flash'),
 formidable = require('formidable'),
 passport = require('passport'),
-url =  'mongodb://ayitimavew:samuel007michel@ds129670.mlab.com:29670/ayitimavew';
+url = 'mongodb://ayitimavew:samuel007michel@ds129670.mlab.com:29670/ayitimavew';
 
 
 

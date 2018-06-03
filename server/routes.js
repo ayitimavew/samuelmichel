@@ -20,7 +20,8 @@ module.exports = app =>{
   router.get('/007-super-admin-007', admin.superAdmin); 
 
 
-
+//Api
+router.get('/api/get-emissions', admin.apiGetEmissions);
 
 router.get('/', client.index);
 router.get('/inscription', client.inscription);
@@ -83,6 +84,10 @@ router.get('/accept-admin/:id_user/:id', admin.acceptAdmin);
 router.get('/delete-demand/:id', admin.deleteDemand);
 router.get('/show-admin', admin.showAdmin);
 router.get('/delete-admin/:id', admin.deleteAdmin);
+
+
+
+
 
 
 //Emissions
