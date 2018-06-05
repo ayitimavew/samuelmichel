@@ -43,7 +43,7 @@ module.exports = {
     },
 
     tiAnons : (req,res) => {
-        q.showCategorie((rr)=>{
+        q.showCategorie((r)=>{
             Annonce.paginate({}, { page:req.params.page, limit: 5, sort: { date: -1 } }, function(err,result) {
                 if(result.docs.length==0){
                  let message = " Poko gen atik pou kunia.";
@@ -54,10 +54,10 @@ module.exports = {
                      pages.push(i)
                  pages.sort()
                  
-                 res.render('tiAnon',{
+                 res.render('tiAnons',{
                      annonces : result.docs,
                      user: req.user,
-                     cat:rr,
+                     cat:r,
                      showPagination : pages.length >= 1,
                      pages : pages,
                      next :  req.params.page < result.pages ? parseInt(result.page)+1 : 1,
@@ -321,20 +321,28 @@ lireVideo : (req,res) => {
     },
     
     _donnation: (req,res)=>{
-       //console.log(req.body.nom+"  "+req.body.prenom+"  "+req.body.phone+"  "+req.body.description);
-       let donnation = {
-           nom : req.body.nom,
-           prenom : req.body.prenom,
-           phone :req.body.phone,
-           description : req.body.description
-       }
-       q.addDonnation(donnation, (txt)=>{
-           res.render('donnation',{
+       if(req.body.nom!="" && req.body.prenom!="" && req.body.phone!="" && req.body.description!=""){
+        let donnation = {
+            nom : req.body.nom,
+            prenom : req.body.prenom,
+            phone :req.body.phone,
+            description : req.body.description
+        }
+        q.addDonnation(donnation, (txt)=>{
+            res.render('donnation',{
+             title : "Donnation",
+             user: req.user,
+                message: "Mèsi pou don ou a!"
+            })
+        })
+       }else{
+        res.render('donnation',{
             title : "Donnation",
             user: req.user,
-               message: "Merci pour votre don!"
+               message: "Rampli chan yo avan! "
            })
-       })
+       }
+      
     },
 
     emissions : (req,res) => {

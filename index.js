@@ -11,8 +11,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', `${__dirname}/views`);
 
 app.enable('strict routing');
-app.all('/ti-anons/', function(req, res) { res.redirect('/ti-anons/'); });
-app.use('/ti-anons/',express.static(__dirname+'/public'));
+app.all('/maket-pam/', function(req, res) { res.redirect('/maket-pam/'); });
+app.use('/maket-pam/',express.static(__dirname+'/public'));
 app.all('/lire-video/', function(req, res) { res.redirect('/lire-video/'); });
 app.use('/lire-video/',express.static(__dirname+'/public'));
 app.all('/detail-cours/', function(req, res) { res.redirect('/detail-cours/'); });

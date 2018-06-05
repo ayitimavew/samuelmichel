@@ -263,7 +263,7 @@ _modifierArticle : (req,res)=>{
           description :req.body.description
       }
       q.addAnnonce(annonce,(txt)=>{
-            res.render('commercial',{
+            res.render('tiAnons',{
                 title : "Commercial",
                 user: req.user
             });

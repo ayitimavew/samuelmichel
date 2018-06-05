@@ -36,6 +36,62 @@
                  #g-upload-input{
                 display: none;
                 }
+
+                /* Make it a marquee */
+.marquee {
+    width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 50s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
+
+/* Make it pretty */
+.microsoft {
+    padding-left: 1.5em;
+    position: relative;
+    font: 16px 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+/* ::before was :before before ::before was ::before - kthx */
+
+
+
+
+/* Style the links */
+.vanity {
+    color: #333;
+    text-align: center;
+    font: .75em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+.vanity a, .microsoft a {
+    color: #1570A6;
+    transition: color .5s;
+    text-decoration: none;
+}
+
+.vanity a:hover, .microsoft a:hover {
+    color: #F65314;
+}
+
+/* Style toggle button */
+.toggle {
+	display: block;
+    margin: 2em auto;
+}
+
     </style>
 
     </head>
@@ -54,7 +110,7 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav">
                         <li class="" role="presentation"><a href="/radio">Radyo </a></li>
-                        <li role="presentation"><a href="/cours">Kou </a></li>
+                        <li role="presentation"><a href="/cours">Ann aprann kreyol </a></li>
                         <li role="presentation"><a href="/emissions/1">Emisyon </a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Blòg </a>
                             <ul class="dropdown-menu" role="menu">
@@ -65,8 +121,8 @@
                             </ul>
                         </li>
                        
-                        <li role="presentation"><a href="/ti-anons/1">Ti anons </a></li>
-                        <li role="presentation"><a href="/donnation">donasyon </a></li>
+                        <li role="presentation"><a href="/maket-pam/1">Makèt pam </a></li>
+                        <li role="presentation"><a href="/donnation">Donasyon </a></li>
                         
                     </ul>
 
@@ -82,14 +138,18 @@
                     </ul>
                 </div>
             </div>
-        </nav>  
+        </nav> 
+
+        <p class="microsoft marquee">Nap anonse tout moun ke mèkredi 15 jen nap gen yon nouvo ribrik sou sit la ret branche.</p>
+       
+       
         
     
            {{{body}}}
     
          
         <div style="margin-top:300px;" style="width:100%;">
-            <footer style="width:100%; height:200px; padding:30px; background-color:#292c2f;margin-top:150px;">
+            <footer style="width:100%; height:200px; padding-top:30px; background-color:#292c2f;margin-top:150px;">
                 <div class="row" style="background-color:#292c2f;">
                         <div class="col-md-4 col-sm-6 footer-navigation">
                             <h3 style="color:#bf3e11;"><a href="#"><img width="200px" src="/img/logoo.png" alt=""></a></h3>
@@ -108,7 +168,7 @@
                             </div>
                         </div>
                         <div class="clearfix visible-sm-block"></div>
-                        <div class="col-md-4 footer-about">
+                        <div class="col-md-4 col-sm-6">
                         
                             <p style="color:#bf3e11;"> “AYITI M’ AVÈ W’” se konesans lakay ou, se vant ou, se rasin ou. “AYITI M’ AVÈ W’” se oumenm, se nou tout ansanm.
                             </p>
